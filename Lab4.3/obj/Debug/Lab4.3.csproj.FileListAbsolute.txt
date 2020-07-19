@@ -1,0 +1,7 @@
+C:\Users\Braian\source\repos\Lab4.3\Lab4.3\bin\Debug\Lab4.3.exe.config
+C:\Users\Braian\source\repos\Lab4.3\Lab4.3\bin\Debug\Lab4.3.exe
+C:\Users\Braian\source\repos\Lab4.3\Lab4.3\bin\Debug\Lab4.3.pdb
+C:\Users\Braian\source\repos\Lab4.3\Lab4.3\obj\Debug\Lab4.3.csprojAssemblyReference.cache
+C:\Users\Braian\source\repos\Lab4.3\Lab4.3\obj\Debug\Lab4.3.csproj.CoreCompileInputs.cache
+C:\Users\Braian\source\repos\Lab4.3\Lab4.3\obj\Debug\Lab4.3.exe
+C:\Users\Braian\source\repos\Lab4.3\Lab4.3\obj\Debug\Lab4.3.pdb
