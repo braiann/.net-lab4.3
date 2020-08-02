@@ -30,6 +30,10 @@ namespace Ejercicio3 {
         
         private dtCursosDataTable tabledtCursos;
         
+        private global::System.Data.DataRelation relationrelAlumnos_Cursos;
+        
+        private global::System.Data.DataRelation relationrelCursos_Alumnos;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,6 +246,8 @@ namespace Ejercicio3 {
                     this.tabledtCursos.InitVars();
                 }
             }
+            this.relationrelAlumnos_Cursos = this.Relations["relAlumnos_Cursos"];
+            this.relationrelCursos_Alumnos = this.Relations["relCursos_Alumnos"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +264,14 @@ namespace Ejercicio3 {
             base.Tables.Add(this.tabledtAlumnos_Cursos);
             this.tabledtCursos = new dtCursosDataTable();
             base.Tables.Add(this.tabledtCursos);
+            this.relationrelAlumnos_Cursos = new global::System.Data.DataRelation("relAlumnos_Cursos", new global::System.Data.DataColumn[] {
+                        this.tabledtAlumnos.IDAlumnoColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtAlumnos_Cursos.IDAlumnoColumn}, false);
+            this.Relations.Add(this.relationrelAlumnos_Cursos);
+            this.relationrelCursos_Alumnos = new global::System.Data.DataRelation("relCursos_Alumnos", new global::System.Data.DataColumn[] {
+                        this.tabledtCursos.IDCursoColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtAlumnos_Cursos.IDAlumnoColumn}, false);
+            this.Relations.Add(this.relationrelCursos_Alumnos);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -727,11 +741,14 @@ namespace Ejercicio3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtAlumnos_CursosRow AdddtAlumnos_CursosRow(int IDAlumno, int IDCurso) {
+            public dtAlumnos_CursosRow AdddtAlumnos_CursosRow(dtAlumnosRow parentdtAlumnosRowByrelAlumnos_Cursos, int IDCurso) {
                 dtAlumnos_CursosRow rowdtAlumnos_CursosRow = ((dtAlumnos_CursosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDAlumno,
+                        null,
                         IDCurso};
+                if ((parentdtAlumnosRowByrelAlumnos_Cursos != null)) {
+                    columnValuesArray[0] = parentdtAlumnosRowByrelAlumnos_Cursos[0];
+                }
                 rowdtAlumnos_CursosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtAlumnos_CursosRow);
                 return rowdtAlumnos_CursosRow;
@@ -1245,6 +1262,17 @@ namespace Ejercicio3 {
             public void SetApellidoNull() {
                 this[this.tabledtAlumnos.ApellidoColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtAlumnos_CursosRow[] GetdtAlumnos_CursosRows() {
+                if ((this.Table.ChildRelations["relAlumnos_Cursos"] == null)) {
+                    return new dtAlumnos_CursosRow[0];
+                }
+                else {
+                    return ((dtAlumnos_CursosRow[])(base.GetChildRows(this.Table.ChildRelations["relAlumnos_Cursos"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1290,6 +1318,28 @@ namespace Ejercicio3 {
                 }
                 set {
                     this[this.tabledtAlumnos_Cursos.IDCursoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtAlumnosRow dtAlumnosRow {
+                get {
+                    return ((dtAlumnosRow)(this.GetParentRow(this.Table.ParentRelations["relAlumnos_Cursos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["relAlumnos_Cursos"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtCursosRow dtCursosRow {
+                get {
+                    return ((dtCursosRow)(this.GetParentRow(this.Table.ParentRelations["relCursos_Alumnos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["relCursos_Alumnos"]);
                 }
             }
             
@@ -1369,6 +1419,17 @@ namespace Ejercicio3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCursoNull() {
                 this[this.tabledtCursos.CursoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public dtAlumnos_CursosRow[] GetdtAlumnos_CursosRows() {
+                if ((this.Table.ChildRelations["relCursos_Alumnos"] == null)) {
+                    return new dtAlumnos_CursosRow[0];
+                }
+                else {
+                    return ((dtAlumnos_CursosRow[])(base.GetChildRows(this.Table.ChildRelations["relCursos_Alumnos"])));
+                }
             }
         }
         

@@ -12,7 +12,7 @@
   <xs:element name="dsUniversidad" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsUniversidad" msprop:Generator_UserDSName="dsUniversidad">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dtAlumnos" msprop:Generator_TableClassName="dtAlumnosDataTable" msprop:Generator_TableVarName="tabledtAlumnos" msprop:Generator_TablePropName="dtAlumnos" msprop:Generator_RowDeletingName="dtAlumnosRowDeleting" msprop:Generator_RowChangingName="dtAlumnosRowChanging" msprop:Generator_RowEvHandlerName="dtAlumnosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAlumnosRowDeleted" msprop:Generator_UserTableName="dtAlumnos" msprop:Generator_RowChangedName="dtAlumnosRowChanged" msprop:Generator_RowEvArgName="dtAlumnosRowChangeEvent" msprop:Generator_RowClassName="dtAlumnosRow">
+        <xs:element name="dtAlumnos" msprop:Generator_TableClassName="dtAlumnosDataTable" msprop:Generator_TableVarName="tabledtAlumnos" msprop:Generator_RowChangedName="dtAlumnosRowChanged" msprop:Generator_TablePropName="dtAlumnos" msprop:Generator_RowDeletingName="dtAlumnosRowDeleting" msprop:Generator_RowChangingName="dtAlumnosRowChanging" msprop:Generator_RowEvHandlerName="dtAlumnosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAlumnosRowDeleted" msprop:Generator_RowClassName="dtAlumnosRow" msprop:Generator_UserTableName="dtAlumnos" msprop:Generator_RowEvArgName="dtAlumnosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDAlumno" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIDAlumno" msprop:Generator_ColumnPropNameInRow="IDAlumno" msprop:Generator_ColumnPropNameInTable="IDAlumnoColumn" msprop:Generator_UserColumnName="IDAlumno" type="xs:int" />
@@ -21,7 +21,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtAlumnos_Cursos" msprop:Generator_TableClassName="dtAlumnos_CursosDataTable" msprop:Generator_TableVarName="tabledtAlumnos_Cursos" msprop:Generator_TablePropName="dtAlumnos_Cursos" msprop:Generator_RowDeletingName="dtAlumnos_CursosRowDeleting" msprop:Generator_RowChangingName="dtAlumnos_CursosRowChanging" msprop:Generator_RowEvHandlerName="dtAlumnos_CursosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAlumnos_CursosRowDeleted" msprop:Generator_UserTableName="dtAlumnos_Cursos" msprop:Generator_RowChangedName="dtAlumnos_CursosRowChanged" msprop:Generator_RowEvArgName="dtAlumnos_CursosRowChangeEvent" msprop:Generator_RowClassName="dtAlumnos_CursosRow">
+        <xs:element name="dtAlumnos_Cursos" msprop:Generator_TableClassName="dtAlumnos_CursosDataTable" msprop:Generator_TableVarName="tabledtAlumnos_Cursos" msprop:Generator_RowChangedName="dtAlumnos_CursosRowChanged" msprop:Generator_TablePropName="dtAlumnos_Cursos" msprop:Generator_RowDeletingName="dtAlumnos_CursosRowDeleting" msprop:Generator_RowChangingName="dtAlumnos_CursosRowChanging" msprop:Generator_RowEvHandlerName="dtAlumnos_CursosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtAlumnos_CursosRowDeleted" msprop:Generator_RowClassName="dtAlumnos_CursosRow" msprop:Generator_UserTableName="dtAlumnos_Cursos" msprop:Generator_RowEvArgName="dtAlumnos_CursosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDAlumno" msprop:Generator_ColumnVarNameInTable="columnIDAlumno" msprop:Generator_ColumnPropNameInRow="IDAlumno" msprop:Generator_ColumnPropNameInTable="IDAlumnoColumn" msprop:Generator_UserColumnName="IDAlumno" type="xs:int" minOccurs="0" />
@@ -29,7 +29,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dtCursos" msprop:Generator_TableClassName="dtCursosDataTable" msprop:Generator_TableVarName="tabledtCursos" msprop:Generator_TablePropName="dtCursos" msprop:Generator_RowDeletingName="dtCursosRowDeleting" msprop:Generator_RowChangingName="dtCursosRowChanging" msprop:Generator_RowEvHandlerName="dtCursosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCursosRowDeleted" msprop:Generator_UserTableName="dtCursos" msprop:Generator_RowChangedName="dtCursosRowChanged" msprop:Generator_RowEvArgName="dtCursosRowChangeEvent" msprop:Generator_RowClassName="dtCursosRow">
+        <xs:element name="dtCursos" msprop:Generator_TableClassName="dtCursosDataTable" msprop:Generator_TableVarName="tabledtCursos" msprop:Generator_RowChangedName="dtCursosRowChanged" msprop:Generator_TablePropName="dtCursos" msprop:Generator_RowDeletingName="dtCursosRowDeleting" msprop:Generator_RowChangingName="dtCursosRowChanging" msprop:Generator_RowEvHandlerName="dtCursosRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCursosRowDeleted" msprop:Generator_RowClassName="dtCursosRow" msprop:Generator_UserTableName="dtCursos" msprop:Generator_RowEvArgName="dtCursosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCurso" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIDCurso" msprop:Generator_ColumnPropNameInRow="IDCurso" msprop:Generator_ColumnPropNameInTable="IDCursoColumn" msprop:Generator_UserColumnName="IDCurso" type="xs:int" />
@@ -48,4 +48,10 @@
       <xs:field xpath="mstns:IDCurso" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="relAlumnos_Cursos" msdata:parent="dtAlumnos" msdata:child="dtAlumnos_Cursos" msdata:parentkey="IDAlumno" msdata:childkey="IDAlumno" msprop:Generator_UserChildTable="dtAlumnos_Cursos" msprop:Generator_ChildPropName="GetdtAlumnos_CursosRows" msprop:Generator_UserRelationName="relAlumnos_Cursos" msprop:Generator_ParentPropName="dtAlumnosRow" msprop:Generator_RelationVarName="relationrelAlumnos_Cursos" msprop:Generator_UserParentTable="dtAlumnos" />
+      <msdata:Relationship name="relCursos_Alumnos" msdata:parent="dtCursos" msdata:child="dtAlumnos_Cursos" msdata:parentkey="IDCurso" msdata:childkey="IDAlumno" msprop:Generator_UserChildTable="dtAlumnos_Cursos" msprop:Generator_ChildPropName="GetdtAlumnos_CursosRows" msprop:Generator_UserRelationName="relCursos_Alumnos" msprop:Generator_RelationVarName="relationrelCursos_Alumnos" msprop:Generator_UserParentTable="dtCursos" msprop:Generator_ParentPropName="dtCursosRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>
